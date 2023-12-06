@@ -58,9 +58,9 @@
                                 </button>
                                  </a><br><br>
                             </div>
-    
-                             <a href="{{ url('/login/google') }}" class="btn btn-primary">Login with Google</a>
-                        
+
+                             <a href="{{ route('login.google') }}" class="btn btn-primary">Login with Google</a>
+
                         </div>
                     </form>
                 </div>

@@ -13,8 +13,8 @@ Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show'
 Route::get('movies/{movie}/reviews/create', [ReviewController::class, 'create'])->name('movies.reviews.create');
 Route::post('movies/{movie}/reviews', [ReviewController::class, 'store'])->name('movies.reviews.store');
 
-Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
-Route::get('/login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+Route::get('/google/redirect', [\App\Http\Controllers\GoogleAuthController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('/google/callback', [\App\Http\Controllers\GoogleAuthController::class, 'handleGoogleCallback']);
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/add-movie', [AdminController::class, 'showAddMovieForm'])->name('admin.add_movie');

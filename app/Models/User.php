@@ -22,7 +22,7 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
     protected $fillable = [
-        'name', 'email', 'password', 'is_admin',
+        'name', 'email', 'password', 'is_admin', 'google_id'
     ];
 
     /**
